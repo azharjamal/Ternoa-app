@@ -1,0 +1,36 @@
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.images-wrapper img {
+  max-width: 100%;
+  margin: 6px;
+}
+
+.display {
+  display: inline-flex;
+  float: left;
+}
+
+.imgdisplay {
+  padding: 0 0 0 0;
+  width: 255px;
+}
+
+.description {
+  height: 5rem;
+  font-size: 10px;
+}
+
+.title {
+  margin: 0px;
+  height: 2rem;
+  font-size: 25px;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

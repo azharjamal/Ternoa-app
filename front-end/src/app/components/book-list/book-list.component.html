@@ -1,0 +1,54 @@
+<app-book [editBook]="book"></app-book>
+
+<hr />
+<div *ngIf="books.length > 0">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-12"> -->
+      <div class="col-md-3 profile" *ngFor="let book of books">
+        <div class="" style="margin-top: 15px">
+          <div class="col-md-12" style="display: inline-flex">
+            <div class="col-md-10" style="margin-left: 0px">
+              <span class="title text-ellipsis" style="margin-left: 0px">{{
+                book.title.length > 15
+                  ? book.title.substr(0, 14) + ".."
+                  : book.title
+              }}</span>
+            </div>
+            <div class="col-md-2">
+              <span style="display: inline-flex; padding-right: 10px">
+                <i
+                  style="font-size: large"
+                  class="fa fa-pencil-square-o"
+                  title="Edit"
+                  (click)="edit(book)"
+                ></i>
+                <i
+                  style="font-size: large"
+                  class="fa fa-trash-o"
+                  title="Delete"
+                  (click)="delete(book)"
+                ></i>
+              </span>
+            </div>
+          </div>
+          <!-- <div
+            class="image-container"
+            [style.background]="'url(' + book.imagePath + ')'"
+          ></div> -->
+          <div>
+            <img class="imgdisplay" [src]="book.imagePath" [alt]="book.title" />
+          </div>
+          <div class="description" style="margin-bottom: 15px">
+            <span>{{
+              book.description.length > 200
+                ? book.description.substr(0, 199) + ".."
+                : book.description
+            }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
